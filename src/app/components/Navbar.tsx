@@ -1,12 +1,13 @@
 "use client"
 
-import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { use, useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
-  const theme = 'dark'; // TODO: get theme from context
+  const {theme, toggleTheme} = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const pathname = usePathname();
   const toggleMobileMenu = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full bg-dark/80 backdrop-blur-sm z-50">
+    <nav className="fixed w-full bg-white/80 dark:bg-dark/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-700 shadow-sm transition-colors">
       <div className="container max-w-7xl mx-auto px-4">
 
         {/* Desktop Menu */}
@@ -39,7 +40,7 @@ const Navbar = () => {
                 )
               })
             }
-            <button className='p-2 rounded-lg hover:bg-gray-100 text-primary dark:hover:bg-gray-800 transition-colors cursor-pointer'>
+            <button onClick={toggleTheme} className='p-2 rounded-lg hover:bg-gray-100 dark:text-white hover:text-primary dark:hover:bg-gray-800 transition-colors cursor-pointer'>
               {
                 theme === 'dark' ? (
                   <SunIcon className='w-5 h-5'/> 
@@ -50,9 +51,48 @@ const Navbar = () => {
             </button>
 
           </div>
+          
+          {/* Mobile Menu Button */}
+
+          <button
+          onClick={toggleMobileMenu}
+          className='md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer'>
+            {
+              isMobileMenuOpen ? (<XMarkIcon className='w-6 h-6'/>) : (<Bars3Icon className='w-6 h-6'/>)
+            }
+          </button>
+
         </div>
 
         {/* Mobile Menu */}
+
+        {
+          isMobileMenuOpen && (
+            <div className='md:hidden'>
+              <div className='py-4 space-y-4'>
+                {
+                  menuItems.map((item, index) => (
+                    <div key={index} onClick={toggleMobileMenu}>
+                      <Link href={item.href} className='block py-2 hover:text-primary transition-colors'>{item.label}</Link>
+                    </div>
+                  ))
+                }
+                <div>
+                  <button onClick={toggleTheme} className='flex items-center py-2 hover:text-primary transition-colors'>
+              {
+                theme === 'dark' ? (
+                  <><SunIcon className='w-5 h-5 mr-2'/>Light Mode</> 
+                ) : (
+                  <><MoonIcon className='w-5 h-5 mr-2'/>Dark Mode</>
+                )
+              }
+            </button>
+                </div>
+              </div>
+            </div>   
+          )
+        }
+
       </div>
     </nav>
   )
