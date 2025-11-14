@@ -34,7 +34,7 @@ const ContactPage = () => {
         body: JSON.stringify(FormData)
       });
 
-      if (response.ok) {
+      if (!response.ok) {
         throw new Error("Failed to send message");
       }
 
