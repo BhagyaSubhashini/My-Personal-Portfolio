@@ -19,6 +19,14 @@ export const projects: Project[] = [
         image: '/projects/Ecommerce platform.png',
       },
       {
+        title: 'Internship Management System',
+        description: 'The Internship Management System is a full-stack web application designed to streamline the process of managing undergraduate internship information within the Faculty of Technology, University of Colombo.',
+        technologies: ['React', 'Node.js', 'Express.js', 'MySQL', 'HTML5', 'CSS3', 'PHP'],
+        githubLink: 'https://github.com/BhagyaSubhashini/Internship-Management-System',
+        demoLink: '/',
+        image: '/projects/IMS.png',
+      },
+      {
         title: 'Hotel Ocean Trails Website',
         description: 'Hotel Ocean Trails is a front-end web project developed using HTML, CSS, and JavaScript, designed to present a modern and elegant hotel website. The site provides visitors with information about the hotel, current offers, nearby attractions, and contact details.',
         technologies: ['HTML5', 'CSS3', 'JavaScript', 'Figma'],
@@ -43,14 +51,6 @@ export const projects: Project[] = [
         image: '/projects/FOT News App.png',
       }
       /*{
-        title: 'Chat Application',
-        description: 'A real-time chat application using WebSocket technology.',
-        technologies: ['React', 'Node.js', 'Socket.io'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/chat-app.png',
-      },
-      {
         title: 'Recipe Finder',
         description: 'A recipe search application using the Edamam API.',
         technologies: ['React', 'Edamam API'],
