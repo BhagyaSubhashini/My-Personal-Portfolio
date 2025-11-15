@@ -7,7 +7,7 @@ export const projects: Project[] = [
         description: 'A dynamic solar energy monitoring dashboard developed with the MERN stack, enabling real-time tracking, anomaly detection, and efficient data handling for improved energy insights.',
         technologies: ['Node.js', 'React', 'Express.js', 'MongoDB', 'Tailwind CSS', 'REST API'],
         githubLink: 'https://github.com/BhagyaSubhashini/Solar-Energy-Dashboard',
-        demoLink: '/',
+        demoLink: 'https://fed-4-frontend.netlify.app',
         image: '/projects/Solar Energy Dashboard.png',
       },
       {
