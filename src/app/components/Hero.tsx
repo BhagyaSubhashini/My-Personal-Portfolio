@@ -50,7 +50,7 @@ const Hero = () => {
           transition={{ delay: 0.9 }}
           className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8"
         >
-          Full-Stack Developer | MERN Stack | Open To Oppurtunities
+          Full-Stack Developer | MERN Stack | Open To Opportunities
         </motion.p>
 
         {/* Social Icons with fadeInUp + hover scale */}
