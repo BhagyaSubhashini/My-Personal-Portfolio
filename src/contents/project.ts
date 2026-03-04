@@ -11,12 +11,12 @@ export const projects: Project[] = [
         image: '/projects/Solar Energy Dashboard.png',
       },
       {
-        title: 'E-commerce Platform',
-        description: 'A full-stack MERN e-commerce platform featuring secure authentication, dynamic product management, integrated payment processing, and a seamless user shopping experience.',
-        technologies: ['Node.js', 'React', 'Express.js', 'MongoDB', 'Tailwind CSS', 'REST API'],
-        githubLink: '/',
-        demoLink: '/',
-        image: '/projects/Ecommerce platform.png',
+        title: 'Productify - Full Stack Product Store',
+        description: 'A full-stack PERN application that enables users to manage products and comments with secure authentication and a clean, user-friendly interface.',
+        technologies: ['Node.js', 'React', 'Express.js', 'PostgreSQL', 'NeonDB', 'Drizzle ORM', 'TypeScript', 'Tailwind CSS', 'DaisyUI'],
+        githubLink: 'https://github.com/BhagyaSubhashini/Productify---Full-Stack-Product-Store',
+        demoLink: 'https://productify-full-stack-product-store.up.railway.app/',
+        image: '/projects/Productify.png',
       },
       {
         title: 'Internship Management System',
